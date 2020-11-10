@@ -1,0 +1,621 @@
+version: '2'
+networks:
+  quick_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.20.30.0/24
+          gateway: 10.20.30.254
+  quick_net_1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.20.40.0/24
+          gateway: 10.20.40.254
+
+services:  udp-1:
+    container_name: udp-1
+    hostname: udp1
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.1
+      quick_net_1:
+        ipv4_address: 10.20.40.1
+    ports:
+      - "8722:8722"
+      - "8708:5708"
+      - "8709:5709"
+      - "8799:5799"
+      - "8713:5713"
+      - "8715:5715"
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-2:
+    container_name: udp-2
+    hostname: udp2
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.2
+      quick_net_1:
+        ipv4_address: 10.20.40.2
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-3:
+    container_name: udp-3
+    hostname: udp3
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.3
+      quick_net_1:
+        ipv4_address: 10.20.40.3
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-4:
+    container_name: udp-4
+    hostname: udp4
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.4
+      quick_net_1:
+        ipv4_address: 10.20.40.4
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-5:
+    container_name: udp-5
+    hostname: udp5
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.5
+      quick_net_1:
+        ipv4_address: 10.20.40.5
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-6:
+    container_name: udp-6
+    hostname: udp6
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.6
+      quick_net_1:
+        ipv4_address: 10.20.40.6
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-7:
+    container_name: udp-7
+    hostname: udp7
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.7
+      quick_net_1:
+        ipv4_address: 10.20.40.7
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-8:
+    container_name: udp-8
+    hostname: udp8
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.8
+      quick_net_1:
+        ipv4_address: 10.20.40.8
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-9:
+    container_name: udp-9
+    hostname: udp9
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.9
+      quick_net_1:
+        ipv4_address: 10.20.40.9
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-10:
+    container_name: udp-10
+    hostname: udp10
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.10
+      quick_net_1:
+        ipv4_address: 10.20.40.10
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-11:
+    container_name: udp-11
+    hostname: udp11
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.11
+      quick_net_1:
+        ipv4_address: 10.20.40.11
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-12:
+    container_name: udp-12
+    hostname: udp12
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.12
+      quick_net_1:
+        ipv4_address: 10.20.40.12
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-13:
+    container_name: udp-13
+    hostname: udp13
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.13
+      quick_net_1:
+        ipv4_address: 10.20.40.13
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-14:
+    container_name: udp-14
+    hostname: udp14
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.14
+      quick_net_1:
+        ipv4_address: 10.20.40.14
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-15:
+    container_name: udp-15
+    hostname: udp15
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.15
+      quick_net_1:
+        ipv4_address: 10.20.40.15
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-16:
+    container_name: udp-16
+    hostname: udp16
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.16
+      quick_net_1:
+        ipv4_address: 10.20.40.16
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-17:
+    container_name: udp-17
+    hostname: udp17
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.17
+      quick_net_1:
+        ipv4_address: 10.20.40.17
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-18:
+    container_name: udp-18
+    hostname: udp18
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.18
+      quick_net_1:
+        ipv4_address: 10.20.40.18
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-19:
+    container_name: udp-19
+    hostname: udp19
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.19
+      quick_net_1:
+        ipv4_address: 10.20.40.19
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-20:
+    container_name: udp-20
+    hostname: udp20
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.20
+      quick_net_1:
+        ipv4_address: 10.20.40.20
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-21:
+    container_name: udp-21
+    hostname: udp21
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.21
+      quick_net_1:
+        ipv4_address: 10.20.40.21
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-22:
+    container_name: udp-22
+    hostname: udp22
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.22
+      quick_net_1:
+        ipv4_address: 10.20.40.22
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-23:
+    container_name: udp-23
+    hostname: udp23
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.23
+      quick_net_1:
+        ipv4_address: 10.20.40.23
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-24:
+    container_name: udp-24
+    hostname: udp24
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.24
+      quick_net_1:
+        ipv4_address: 10.20.40.24
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-25:
+    container_name: udp-25
+    hostname: udp25
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.25
+      quick_net_1:
+        ipv4_address: 10.20.40.25
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-26:
+    container_name: udp-26
+    hostname: udp26
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.26
+      quick_net_1:
+        ipv4_address: 10.20.40.26
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-27:
+    container_name: udp-27
+    hostname: udp27
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.27
+      quick_net_1:
+        ipv4_address: 10.20.40.27
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-28:
+    container_name: udp-28
+    hostname: udp28
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.28
+      quick_net_1:
+        ipv4_address: 10.20.40.28
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-29:
+    container_name: udp-29
+    hostname: udp29
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.29
+      quick_net_1:
+        ipv4_address: 10.20.40.29
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-30:
+    container_name: udp-30
+    hostname: udp30
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.30
+      quick_net_1:
+        ipv4_address: 10.20.40.30
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-31:
+    container_name: udp-31
+    hostname: udp31
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.31
+      quick_net_1:
+        ipv4_address: 10.20.40.31
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-32:
+    container_name: udp-32
+    hostname: udp32
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.32
+      quick_net_1:
+        ipv4_address: 10.20.40.32
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-33:
+    container_name: udp-33
+    hostname: udp33
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.33
+      quick_net_1:
+        ipv4_address: 10.20.40.33
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-34:
+    container_name: udp-34
+    hostname: udp34
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.34
+      quick_net_1:
+        ipv4_address: 10.20.40.34
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-35:
+    container_name: udp-35
+    hostname: udp35
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.35
+      quick_net_1:
+        ipv4_address: 10.20.40.35
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-36:
+    container_name: udp-36
+    hostname: udp36
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.36
+      quick_net_1:
+        ipv4_address: 10.20.40.36
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-37:
+    container_name: udp-37
+    hostname: udp37
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.37
+      quick_net_1:
+        ipv4_address: 10.20.40.37
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-38:
+    container_name: udp-38
+    hostname: udp38
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.38
+      quick_net_1:
+        ipv4_address: 10.20.40.38
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-39:
+    container_name: udp-39
+    hostname: udp39
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.39
+      quick_net_1:
+        ipv4_address: 10.20.40.39
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-40:
+    container_name: udp-40
+    hostname: udp40
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.40
+      quick_net_1:
+        ipv4_address: 10.20.40.40
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-41:
+    container_name: udp-41
+    hostname: udp41
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.41
+      quick_net_1:
+        ipv4_address: 10.20.40.41
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-42:
+    container_name: udp-42
+    hostname: udp42
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.42
+      quick_net_1:
+        ipv4_address: 10.20.40.42
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-43:
+    container_name: udp-43
+    hostname: udp43
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.43
+      quick_net_1:
+        ipv4_address: 10.20.40.43
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-44:
+    container_name: udp-44
+    hostname: udp44
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.44
+      quick_net_1:
+        ipv4_address: 10.20.40.44
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-45:
+    container_name: udp-45
+    hostname: udp45
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.45
+      quick_net_1:
+        ipv4_address: 10.20.40.45
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-46:
+    container_name: udp-46
+    hostname: udp46
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.46
+      quick_net_1:
+        ipv4_address: 10.20.40.46
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-47:
+    container_name: udp-47
+    hostname: udp47
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.47
+      quick_net_1:
+        ipv4_address: 10.20.40.47
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-48:
+    container_name: udp-48
+    hostname: udp48
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.48
+      quick_net_1:
+        ipv4_address: 10.20.40.48
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-49:
+    container_name: udp-49
+    hostname: udp49
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.49
+      quick_net_1:
+        ipv4_address: 10.20.40.49
+    extends:
+      file: common.yaml
+      service: agent
+
+  udp-50:
+    container_name: udp-50
+    hostname: udp50
+    networks:
+      quick_net:
+        ipv4_address: 10.20.30.50
+      quick_net_1:
+        ipv4_address: 10.20.40.50
+    extends:
+      file: common.yaml
+      service: agent

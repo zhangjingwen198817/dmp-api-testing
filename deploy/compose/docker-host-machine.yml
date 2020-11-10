@@ -1,0 +1,11 @@
+agent:
+  container_name: ci.dmp-api-autotest-122-1
+  hostname: ci.dmp-api-autotest-122-1
+  image: docker-registry:5000/actiontech/dmp-api-autotest-agent:latest
+  privileged: true
+  restart: always
+  volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+  extra_hosts:
+    - "docker-registry:10.186.18.20"
+    - "gocd-server:10.186.18.19"

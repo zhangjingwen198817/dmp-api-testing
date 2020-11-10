@@ -1,0 +1,11 @@
+version: '2'
+services:
+  agent:
+      image: docker-registry:5000/actiontech/balm-runtime-centos6:latest
+      privileged: true
+      stdin_open: true
+      tty: true
+      cap_add:
+        - ALL
+      security_opt:
+        - seccomp:unconfined

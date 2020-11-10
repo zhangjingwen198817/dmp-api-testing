@@ -1,0 +1,7 @@
+PyHamcrest
+requests
+pyjq
+yapf
+pyyaml==3.13
+lxml
+configparser

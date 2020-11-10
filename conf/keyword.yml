@@ -1,0 +1,14 @@
+sla_policy:
+  rto-400:
+    sla_rto: 700
+    sla_rto_levels: 20,30,400
+  rpo-500:
+    sla_rpo: 1
+    sla_rpo_levels: 10,40,500
+    sla_rpo_error_levels: 20,50,500
+  number_semi-synchronous_instances_1:
+    ha_policy_failover_election: HA_POLICY_FAILOVER_ELECTION_SAME_ZONE
+    ha_policy_semisync_count: HA_POLICY_SEMISYNC_COUNT_MINUS_ONE_MINIMUM_ONE
+  number_semi-synchronous_instances:
+    ha_policy_failover_election: HA_POLICY_FAILOVER_ELECTION_SAME_ZONE
+    ha_policy_semisync_count: HA_POLICY_SEMISYNC_COUNT_EQUAL

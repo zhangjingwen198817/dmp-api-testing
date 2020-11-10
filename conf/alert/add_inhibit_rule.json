@@ -1,0 +1,154 @@
+{
+  "global": {
+    "resolve_timeout": 86400000000000
+  },
+  "receivers": [
+    {
+      "name": "universe-null",
+      "universe_configs": [
+        {
+          "send_resolved": true,
+          "type": "null"
+        }
+      ]
+    },
+    {
+      "name": "urds",
+      "universe_configs": [
+        {
+          "send_resolved": true,
+          "type": "rds"
+        }
+      ]
+    },
+    {
+      "name": "record",
+      "universe_configs": [
+        {
+          "send_resolved": true,
+          "type": "record"
+        }
+      ]
+    }
+  ],
+  "route": {
+    "is_expression_match": true,
+    "match_exp": "true",
+    "match": {},
+    "receiver": "universe-null",
+    "group_by": [
+      "level",
+      "alert_comp_type",
+      "alert_comp_id",
+      "code"
+    ],
+    "route_id": "1",
+    "group_wait": 5000000000,
+    "repeat_interval": 3600000000000,
+    "group_interval": 5000000000,
+    "routes": [
+      {
+        "is_expression_match": true,
+        "match_exp": "true",
+        "match": {},
+        "receiver": "urds",
+        "group_by": [
+          "level",
+          "alert_comp_type",
+          "alert_comp_id",
+          "code"
+        ],
+        "route_id": "3",
+        "group_wait": 5000000000,
+        "repeat_interval": 3600000000000,
+        "group_interval": 5000000000,
+        "continue": true,
+        "routes": []
+      },
+      {
+        "is_expression_match": true,
+        "match_exp": "true",
+        "match": {},
+        "receiver": "record",
+        "group_by": [
+          "level",
+          "alert_comp_type",
+          "alert_comp_id",
+          "code"
+        ],
+        "route_id": "5",
+        "group_wait": 5000000000,
+        "repeat_interval": 3600000000000,
+        "group_interval": 5000000000,
+        "continue": true,
+        "routes": []
+      }
+    ]
+  },
+  "inhibit_rules": [
+    {
+      "is_expression_match": true,
+      "equal": [
+        "alert_comp_id"
+      ],
+      "source_match_exp": "code=='mysql_repl_delay_more_than_1000'",
+      "target_match_exp": "code=='mysql_repl_delay_more_than_600'"
+    },
+    {
+      "is_expression_match": true,
+      "equal": [
+        "alert_comp_id"
+      ],
+      "source_match_exp": "code=='mysql_max_used_connections_more_than_80%'",
+      "target_match_exp": "code=='mysql_max_used_connections_more_than_60%'"
+    },
+    {
+      "is_expression_match": true,
+      "equal": [
+        "alert_comp_id"
+      ],
+      "source_match_exp": "code=='mysql_data_disk_usage_more_than_90%'",
+      "target_match_exp": "code=='mysql_data_disk_usage_more_than_80%'"
+    },
+    {
+      "is_expression_match": true,
+      "equal": [
+        "alert_comp_id"
+      ],
+      "source_match_exp": "code=='mysql_binlog_disk_usage_more_than_90%'",
+      "target_match_exp": "code=='mysql_binlog_disk_usage_more_than_80%'"
+    },
+    {
+      "is_expression_match": true,
+      "equal": [
+        "alert_comp_id"
+      ],
+      "source_match_exp": "code=='mysql_uptime'",
+      "target_match_exp": "code=~'mysql_[a-zA-Z0-9_%-]+'"
+    },
+    {
+      "is_expression_match": true,
+      "equal": [
+        "server"
+      ],
+      "source_match_exp": "code=='server_offline'",
+      "target_match_exp": "code=~'[a-zA-Z0-9_%-]+'"
+    },
+    {
+      "is_expression_match": true,
+      "equal": [
+        "code"
+      ],
+      "source_match_exp": "service=='uagent'",
+      "target_match_exp": "service=~'[a-zA-Z0-9_%-]+'"
+    },
+    {
+      "equal": [
+        "alert_comp_id"
+      ],
+      "source_match_exp": "code=='mysql_tps_more_than_3000'",
+      "target_match_exp": "code=='mysql_qps_more_than_2000'",
+      "is_expression_match": true
+    }
+  ]
+}
